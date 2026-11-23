@@ -1,0 +1,201 @@
+* {
+    box-sizing: border-box;
+}
+
+.people-content {
+    padding: 24px;
+    width: 100%;
+}
+
+.people-content h1 {
+    color: #24364d;
+    margin-bottom: 5px;
+    font-size: clamp(20px, 2.2vw, 28px);
+}
+
+.subtitle {
+    color: #718092;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.employee-box {
+    width: 100%;
+    max-width: 1200px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 18px;
+    background: #ffffff;
+}
+
+.top-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.top-area input {
+    flex: 1;
+    min-width: 220px;
+    max-width: 340px;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    outline: none;
+    font-size: 14px;
+}
+
+.top-area input:focus {
+    border-color: #168f88;
+}
+
+.top-area button,
+.add-button {
+    padding: 10px 16px;
+    background: #168f88;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.top-area button:hover,
+.add-button:hover {
+    background: #12756f;
+}
+
+.table-head,
+.employee-row {
+    display: grid;
+    grid-template-columns: 1.4fr 1.4fr 1fr 0.8fr;
+    align-items: center;
+    gap: 12px;
+}
+
+.table-head {
+    padding: 10px 12px;
+    color: #777;
+    font-size: 12px;
+    font-weight: 600;
+    background-color: #f9fafb;
+    border-radius: 6px;
+}
+
+.employee-row {
+    padding: 14px 12px;
+    border-top: 1px solid #eee;
+    color: #5d6b78;
+    font-size: 14px;
+}
+
+.employee-name {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #35485b;
+    font-weight: 500;
+}
+
+.avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #dceeed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #477572;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.status {
+    color: #32917c;
+    font-weight: 500;
+}
+
+@media (min-width: 1025px) and (max-width: 1366px) {
+    .people-content {
+        padding: 20px 28px;
+    }
+
+    .employee-box {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .people-content {
+        padding: 20px;
+    }
+
+    .table-head,
+    .employee-row {
+        grid-template-columns: 1.3fr 1.3fr 1fr 0.8fr;
+        font-size: 13px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .people-content {
+        padding: 14px;
+    }
+
+    .employee-box {
+        padding: 14px;
+    }
+
+    .top-area {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .top-area input {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .top-area button,
+    .add-button {
+        width: 100%;
+        text-align: center;
+    }
+
+    .table-head {
+        display: none;
+    }
+
+    .employee-row {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        padding: 14px 8px;
+    }
+
+    .employee-row > div:not(.employee-name)::before {
+        font-weight: 600;
+        color: #718092;
+        font-size: 11px;
+        text-transform: uppercase;
+        display: block;
+        margin-bottom: 2px;
+    }
+
+    .employee-row > div:nth-child(2)::before {
+        content: "Title / Team";
+    }
+
+    .employee-row > div:nth-child(3)::before {
+        content: "Manager";
+    }
+
+    .employee-row > div:nth-child(4)::before {
+        content: "Status";
+    }
+}
